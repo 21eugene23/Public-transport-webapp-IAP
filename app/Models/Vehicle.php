@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
-    public function schedules()
-    {
-        return $this->hasMany(Schedule::class);
-    }
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'type',
+        'registration_number',
+        'capacity'
+    ];
 }
