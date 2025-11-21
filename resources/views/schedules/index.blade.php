@@ -1,3 +1,8 @@
-<div>
-    <!-- It is never too late to be what you might have been. - George Eliot -->
+@extends('layouts.app')
+@section('title','Schedules')
+@section('content')
+<div class="bg-white p-6 rounded shadow">
+  <h1 class="text-2xl font-bold">Schedules</h1>
+  <p class="mt-2 text-sm text-gray-600">Departure and arrival times for vehicles.</p>
 </div>
+@endsection

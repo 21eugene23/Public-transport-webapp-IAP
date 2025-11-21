@@ -1,3 +1,8 @@
-<div>
-    <!-- The best way to take care of the future is to take care of the present moment. - Thich Nhat Hanh -->
+@extends('layouts.app')
+@section('title','Bookings')
+@section('content')
+<div class="bg-white p-6 rounded shadow">
+  <h1 class="text-2xl font-bold">Bookings</h1>
+  <p class="mt-2 text-sm text-gray-600">Manage user bookings here.</p>
 </div>
+@endsection
