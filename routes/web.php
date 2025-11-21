@@ -1,9 +1,17 @@
 <?php
+
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Route;
-Route::get('/', function(){ return view('routes.index'); })->name('home');
-Route::resource('routes', 'App\Http\Controllers\RouteController');
-Route::resource('vehicles', 'App\Http\Controllers\VehicleController');
-Route::resource('schedules', 'App\Http\Controllers\ScheduleController');
-Route::resource('bookings', 'App\Http\Controllers\BookingController');
-Route::get('login', function(){ return view('auth.login'); })->name('login');
-Route::get('register', function(){ return view('auth.register'); })->name('register');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::resource('routes', RouteController::class);
+Route::resource('vehicles', VehicleController::class);
+Route::resource('schedules', ScheduleController::class);
+Route::resource('bookings', BookingController::class);
+
