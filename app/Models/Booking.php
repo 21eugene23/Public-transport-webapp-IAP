@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
+    protected $fillable = [
+        'user_id',
+        'schedule_id',
+        'passenger_name',
+        'seat_number',
+        'status',
+    ];
+
     public function schedule()
     {
         return $this->belongsTo(Schedule::class);
@@ -16,3 +24,4 @@ class Booking extends Model
         return $this->belongsTo(User::class);
     }
 }
+

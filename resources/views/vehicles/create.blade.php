@@ -1,36 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Vehicle</title>
-</head>
-<body>
-    <h1>Add New Vehicle</h1>
-    <a href="{{ route('vehicles.index') }}">Back</a>
+@extends('layouts.app')
 
-    @if($errors->any())
-        <ul style="color:red">
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+@section('content')
+<h2 class="text-xl font-bold mb-4">Add Vehicle</h2>
 
-    <form action="{{ route('vehicles.store') }}" method="POST">
-        @csrf
-        <label>Name:</label>
-        <input type="text" name="name" value="{{ old('name') }}"><br><br>
+<form action="{{ route('vehicles.store') }}" method="POST" class="space-y-4">
+    @csrf
 
-        <label>Type:</label>
-        <input type="text" name="type" value="{{ old('type') }}"><br><br>
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" class="border p-2 w-full" required>
+    </div>
 
-        <label>Registration Number:</label>
-        <input type="text" name="registration_number" value="{{ old('registration_number') }}"><br><br>
+    <div>
+        <label>Type</label>
+        <input type="text" name="type" class="border p-2 w-full" required>
+    </div>
 
-        <label>Capacity:</label>
-        <input type="number" name="capacity" value="{{ old('capacity') }}"><br><br>
+    <div>
+        <label>Registration Number</label>
+        <input type="text" name="registration_number" class="border p-2 w-full" required>
+    </div>
 
-        <button type="submit">Add Vehicle</button>
-    </form>
-</body>
-</html>
+    <div>
+        <label>Capacity</label>
+        <input type="number" name="capacity" class="border p-2 w-full">
+    </div>
+
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+        Save
+    </button>
+</form>
+@endsection

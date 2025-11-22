@@ -9,19 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('vehicles', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+   public function up() : void
+{
+    Schema::table('bookings', function (Blueprint $table) {
+        $table->string('passenger_name')->after('schedule_id');
+    });
+}
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('vehicles');
+        Schema::table('bookings', function (Blueprint $table) {
+            //
+        });
     }
 };
